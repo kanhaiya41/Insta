@@ -1,38 +1,800 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Sign Up  */
+.SignupMaindiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logoandtext {}
+
+.SignUpForm {
+    box-shadow: 2px 2px 2px 2px rgb(99, 108, 111);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.SignupUsername {
+    border: #ccc 1px solid;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    margin-top: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.SignupUsername:focus {
+    border: #ccc 1px solid;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SignupUsernamespan {
+    font-weight: 500;
 }
+
+.SignupButton {
+    padding: 10px 0;
+    background-color: rgb(6, 6, 42);
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.SignUpLogo {
+    text-align: center;
+    font-weight: bold;
+}
+
+.SignUpText {
+    font-size: small;
+    text-align: center;
+}
+
+.SignUpNavLink {
+    text-decoration: none;
+}
+
+.Loader {
+    margin-right: 12px;
+    height: 30px;
+    width: 30px;
+    animation: spin linear 2s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ******Sign up******* */
+
+/* Side Bar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    left: 0;
+    padding: 10px 40px;
+    height: 100vh;
+    padding-right: 70px;
+    box-shadow: .5px .5px .5px .5px gray;
+}
+
+.sidebardiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebaritemdiv {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+
+.sidebaritemdiv:hover {
+    background: rgb(183, 180, 180);
+    cursor: pointer;
+    padding: 3;
+
+}
+
+.ProfilePicturesidebar {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+.sdbrntfnbtn{
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    background: red;
+    outline: none;
+    border: none;
+}
+
+
+
+/* *********Side Bar*************** */
+
+/* Feed  */
+.Feeddiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+}
+
+/* *******Feed********** */
+
+/* home */
+
+.homemaindiv {
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+    margin-left: 10%;
+}
+
+.homediv {
+    display: flex;
+}
+
+/* *****home*********** */
+
+/* Post */
+
+.Postdiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Postmaindiv {
+    margin: 20px auto;
+    width: 100%;
+    max-width: small;
+
+}
+
+.Postinsidediv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Adminmodall {
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    margin-left: 42%;
+    margin-top: 19vh;
+    width: 35%;
+    background-color: rgb(179, 55, 55);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding: 1vh;
+}
+
+.modal-contentt {
+    background: white;
+    padding: 20vh;
+    border-radius: 8vh;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#custom-formm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vh;
+}
+
+.buttonn {
+    padding: 1.3vh;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+
+}
+
+#submitmodal {
+    font-weight: bold;
+    color: #ED4956;
+}
+
+.postimg {
+    height: 378.5px;
+    width: 378.5px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+.postlikeicon {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.postCommenticon {
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.postCommenticon:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.postsendicon {
+    cursor: pointer;
+    font-size: 22px;
+
+}
+
+.postsendicon:hover {
+    color: gray;
+}
+
+.postsavebookmarkicon {
+    cursor: pointer;
+    font-size: 22px;
+
+}
+
+.postsavebookmarkicon:hover {
+    color: gray;
+}
+
+.divposticon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+.divposticoninside {
+    display: flex;
+    gap: 15px;
+}
+
+.postlikes {
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.postusernamep {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.postcommentinput {
+    border: none;
+    outline: none;
+    font-size: small;
+    width: 100%;
+}
+
+.postposttext {
+    color: #3BADF8;
+    cursor: pointer;
+    /* display: none; */
+}
+
+.postveirallcomment {
+    cursor: pointer;
+    color: gray;
+    font-size: small;
+}
+
+.authorpost {
+    background-color: rgb(229, 226, 226);
+    border-radius: 12px;
+    text-align: center;
+    /* width: 80px; */
+    font-weight: 600;
+    margin-left: 10px;
+    padding: 4px;
+    width: fit-content;
+}
+
+/* *******Post ********* */
+
+/* CommentDialog */
+
+#Commentmodall {
+    position: fixed;
+    z-index: 1010;
+    left: 0;
+    top: 0;
+    margin-left: 42%;
+    margin-top: 19vh;
+    width: 50%;
+    background-color: rgb(224, 214, 214);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.Comment-contentt {
+    background: white;
+    border-radius: 8vh;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#Comment-formm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vh;
+}
+
+.CommentDailogtimg {
+    height: 370px;
+    width: 100%;
+}
+
+#backgroundOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+
+}
+
+.commentdialogdiv {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: column;
+
+}
+
+.commentdialogmaindiv {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.commentdialogflexdiv {
+    display: flex;
+}
+
+.closecommentdialog {
+    margin-left: 95%;
+    position: absolute;
+}
+
+.commentdialogimgvaladiv {
+    width: 50%;
+}
+
+.commentdialogusnamenvlink {
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+
+}
+
+.commentdialogdivdivdiv {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}
+
+.commentdialogbiohere {
+    color: gray;
+    font-size: small;
+}
+
+#cddialogmodall {
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    margin-left: 42%;
+    margin-top: 19vh;
+    width: 35%;
+    background-color: rgb(247, 240, 240);
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding: 1vh;
+}
+
+.cddialogmodal-contentt {
+    background: white;
+    padding: 20vh;
+    border-radius: 8vh;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#cddialogcustom-formm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vh;
+}
+
+.cddialogbuttonn {
+    padding: 1.3vh;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+
+}
+
+.cddialogbuttonnn {
+    padding: 1.3vh;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ED4956;
+
+}
+
+#cddialogsubmitmodal {
+    font-weight: bold;
+    color: #ED4956;
+}
+
+.opendialogdialogicon {
+    cursor: pointer;
+}
+
+.commentDialogcommentayenge {
+    overflow: auto;
+    padding: 15px;
+    position: absolute;
+    height: 65%;
+    margin-top: 40px;
+}
+
+.commentayengesenichevala {
+    padding: 15px;
+    margin-top: 50px;
+}
+
+.addacmtiptfldniche {
+    width: 100%;
+    outline: none;
+    border: gray;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.sendcommentcmtdlg {
+    outline: gray;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.cmtinpbtndiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50%;
+    justify-content: space-between;
+
+}
+
+/* *******CommentDialog***********8 */
+
+/* Create Post  */
+
+#CreatePostmodall {
+    position: fixed;
+    z-index: 1010;
+    left: 0;
+    top: 0;
+    margin-left: 30%;
+    margin-top: 3vh;
+    width: 50%;
+    background-color: rgb(224, 214, 214);
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+.CreatePost-contentt {
+    background: white;
+    border-radius: 8vh;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#CreatePost-formm {
+    display: flex;
+    margin-left: 35%;
+    align-items: center;
+    gap: 1.4vh;
+}
+
+.slectpostbtncreatepost {
+    width: fit-content;
+    margin-top: auto;
+    background: #0095F6;
+    padding: 8px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: 650;
+}
+
+.slectpostbtncreatepost:hover {
+    background: #258bcf;
+    cursor: pointer;
+}
+
+.buttonncreatepost {
+    padding: 1.3vh;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    width: 80%;
+    background: rgb(4, 4, 56);
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#PostOptionmodall {
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    margin-left: 42%;
+    margin-top: 19vh;
+    width: 35%;
+    background-color: rgb(179, 55, 55);
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+}
+
+.PostOption-contentt {
+    background: white;
+    padding: 20vh;
+    border-radius: 8vh;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#PostOption-formm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vh;
+}
+
+.PostOptionbuttonn {
+    padding: 1.3vh;
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+
+}
+
+#PostOptionsubmitmodal {
+    font-weight: bold;
+    color: #ED4956;
+}
+
+#PostOptionsubmitmodall {
+    font-weight: bold;
+    color: #ED4956;
+}
+
+/* ******Create Post************ */
+
+/* rightSidebar */
+
+.rightSidebardiv {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+}
+
+/* ******rightSidebar********* */
+
+/* SuggestedUsers */
+
+.suggestedusefollor {
+    color: #3badf8;
+    font-size: x-small;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.suggestedusefollor:hover {
+    color: #3495d6;
+}
+
+/* ********SuggestedUsers************ */
+
+/* Profile */
+
+.profilegrid {
+    display: grid;
+    grid-column: 2;
+    /* align-items: center; */
+    margin-top: 10px;
+    gap: 60px;
+    justify-content: start;
+    grid-template-columns: auto auto;
+}
+
+.editbtnprofile {
+    outline: none;
+    border: none;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.editbtnprofilee {
+    outline: none;
+    border: none;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.editbtnprofile:hover {
+    background-color: gray;
+
+}
+
+.flwunflwprofile {
+    background: #0095F6;
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+
+}
+
+.flwunflwprofile:hover {
+    background: #3192d2;
+}
+
+.unflwprofile {
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.postinprofile {
+    margin: 10px;
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+    /* position: absolute; */
+
+}
+
+.postnicheprofile {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    /* background: #000; */
+    opacity: 0;
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    padding: 80px;
+    background: black;
+
+}
+
+.postnicheprofile:hover {
+    opacity: 0.4;
+    transition: opacity 2s;
+    border: none;
+    outline: none;
+}
+
+.profilepostlikebtn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    gap: 10px;
+    font-size: 24px;
+
+
+}
+
+.profilepostlikebtn:hover {
+    color: gray;
+}
+
+/* *********Profile********** */
+
+/* EditProfile */
+.chngphtedtprfl {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: #0095F6;
+    color: white;
+    cursor: pointer;
+}
+
+.chngphtedtprfl:hover {
+    background: #318bc7;
+}
+
+/* *******EditProfile********** */
+
+/* ChatPage */
+
+.chatpagereturnnichediv{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    
+
+}
+.chatpagereturnnichediv:hover{
+    background: rgb(203, 199, 199);
+    cursor: pointer;
+}
+
+.ProfilePicturesidebarr {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.chngphtedtprfll {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    
+}
+
+/* *******ChatPage************ */
